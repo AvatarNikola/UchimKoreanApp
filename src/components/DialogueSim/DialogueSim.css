@@ -164,6 +164,19 @@
   color: var(--color-text-muted);
   margin-top: 0.3rem;
   font-style: italic;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.3s ease, max-height 0.3s ease;
+}
+
+.ds-bubble:hover .ds-translation {
+  opacity: 1;
+  max-height: 50px;
+}
+
+.ds-msg--user .ds-translation {
+  color: rgba(255, 255, 255, 0.85);
 }
 
 .ds-speak {
