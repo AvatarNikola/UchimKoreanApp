@@ -14,6 +14,7 @@ const OPERATIONS = [
   { symbol: '*', labelKey: 'op_multiplication', category: 'multiplication' },
   { symbol: '/', labelKey: 'op_division',        category: 'division' },
   { symbol: 'word', labelKey: 'op_word',         category: 'word' },
+  { symbol: 'geometry', labelKey: 'op_geometry', category: 'geometry' },
 ];
 
 const POINTS_CORRECT = 10;

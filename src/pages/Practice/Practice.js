@@ -14,6 +14,7 @@ const CATEGORIES = [
   { symbol: '*', labelKey: 'op_multiplication',color: 'gold',   category: 'multiplication' },
   { symbol: '/', labelKey: 'op_division',      color: 'red',    category: 'division' },
   { symbol: 'word', labelKey: 'op_word',       color: 'purple', category: 'word' },
+  { symbol: 'geometry', labelKey: 'op_geometry', color: 'indigo', category: 'geometry' },
 ];
 
 const Practice = () => {

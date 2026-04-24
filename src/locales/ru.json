@@ -15,6 +15,7 @@
     "feat_subtraction": "Вычитание", "feat_subtraction_desc": "Практика вычитания",
     "feat_multiplication": "Умножение", "feat_multiplication_desc": "Таблица умножения",
     "feat_division": "Деление", "feat_division_desc": "Практика деления",
+    "feat_geometry": "Геометрия", "feat_geometry_desc": "Периметр и Площадь",
     "feat_lessons": "Уроки", "feat_lessons_desc": "Изучение теории",
     "feat_quiz": "Квиз", "feat_quiz_desc": "Проверка знаний",
     "feat_flashcards": "Карточки", "feat_flashcards_desc": "Запоминание слов",
@@ -41,11 +42,11 @@
     "easy": "Легко", "medium": "Средне", "hard": "Сложно",
     "option_listening": "🎧 Только на слух (скрыть текст)", "listening_placeholder": "🎧 (Пример скрыт)",
     "op_addition": "Сложение", "op_subtraction": "Вычитание", "op_multiplication": "Умножение",
-    "op_division": "Деление", "op_word": "📝 Задачки"
+    "op_division": "Деление", "op_word": "📝 Задачки", "op_geometry": "📐 Геометрия"
   },
   "vocabulary": {
     "title": "📖 Словарь", "search": "Найти слово...",
-    "cat_all": "Все", "cat_numbers": "Числа", "cat_math": "Математика", "cat_phrases": "Фразы", "cat_app": "Интерфейс",
+    "cat_all": "Все", "cat_numbers": "Числа", "cat_math": "Математика", "cat_geometry": "Геометрия", "cat_phrases": "Фразы", "cat_travel": "Путешествия", "cat_app": "Интерфейс",
     "col_word": "Слово", "col_pronunciation": "Произношение", "col_meaning": "Значение", "col_en": "English", "col_ru": "Русский",
     "mode_cards": "Карточки", "mode_list": "Список", "flip_hint": "Нажмите на карточку",
     "prev": "← Назад", "next": "Вперёд →", "of": "из", "front_hint": "Нажмите для перевода", "no_results": "Ничего не найдено"
@@ -76,7 +77,7 @@
     "again": "Заново", "hard": "Сложно", "good": "Хорошо", "easy": "Легко",
     "all_done": "Всё повторено!", "come_back": "Возвращайтесь завтра для повторения.",
     "mastered": "Выучено", "reviewing": "Повторение", "learning": "Учу", "new": "Новые",
-    "cat_all": "Все", "cat_numbers": "Числа", "cat_math": "Математика", "cat_phrases": "Фразы", "cat_app": "Приложение",
+    "cat_all": "Все", "cat_numbers": "Числа", "cat_math": "Математика", "cat_geometry": "Геометрия", "cat_phrases": "Фразы", "cat_travel": "Путешествия", "cat_app": "Приложение",
     "session_correct": "{{n}} правильно"
   },
   "dialogue": {

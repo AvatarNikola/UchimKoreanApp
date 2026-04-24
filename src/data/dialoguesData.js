@@ -212,5 +212,216 @@ export const dialoguesData = [
         ]
       }
     ]
+  },
+  {
+    id: 'airport_checkin',
+    category: 'travel',
+    title: { ko: '공항 탑승수속', en: 'Airport Check-in', ru: 'Регистрация в аэропорту' },
+    icon: '✈️',
+    steps: [
+      {
+        npc: '여권과 항공권을 보여주시겠어요?',
+        npcTranslation: { en: 'May I see your passport and ticket?', ru: 'Покажите ваш паспорт и билет, пожалуйста.' },
+        options: [
+          { text: '네, 여기 있습니다.', correct: true },
+          { text: '어디로 가요?', correct: false },
+          { text: '안녕히 계세요.', correct: false },
+        ]
+      },
+      {
+        npc: '수하물로 부치실 가방이 있으신가요?',
+        npcTranslation: { en: 'Do you have any bags to check?', ru: 'У вас есть багаж для сдачи?' },
+        options: [
+          { text: '네, 이 가방 하나요.', correct: true },
+          { text: '기내에 가지고 탈게요.', correct: true },
+          { text: '얼마예요?', correct: false },
+        ]
+      },
+      {
+        npc: '창가 자리와 통로 자리 중 어디가 좋으신가요?',
+        npcTranslation: { en: 'Would you prefer a window or an aisle seat?', ru: 'Вы предпочитаете место у окна или у прохода?' },
+        options: [
+          { text: '창가 자리로 부탁드려요.', correct: true },
+          { text: '통로 자리가 좋아요.', correct: true },
+          { text: '집에 갈래요.', correct: false },
+        ]
+      },
+      {
+        npc: '탑승구는 15번이며, 탑승은 10시 30분에 시작합니다.',
+        npcTranslation: { en: 'Your gate is 15, and boarding starts at 10:30.', ru: 'Ваш выход 15, посадка начинается в 10:30.' },
+        options: [
+          { text: '감사합니다.', correct: true },
+          { text: '비행기를 놓쳤어요.', correct: false },
+          { text: '너무 비싸요.', correct: false },
+        ]
+      }
+    ]
+  },
+  {
+    id: 'hotel_checkin',
+    category: 'travel',
+    title: { ko: '호텔 체크인', en: 'Hotel Check-in', ru: 'Заселение в отель' },
+    icon: '🏨',
+    steps: [
+      {
+        npc: '어서 오십시오. 체크인하시겠습니까?',
+        npcTranslation: { en: 'Welcome. Would you like to check in?', ru: 'Добро пожаловать. Хотите заселиться?' },
+        options: [
+          { text: '네, 예약했습니다.', correct: true },
+          { text: '밥 먹고 싶어요.', correct: false },
+          { text: '체크아웃 할게요.', correct: false },
+        ]
+      },
+      {
+        npc: '예약자 성함이 어떻게 되시나요?',
+        npcTranslation: { en: 'What name is the reservation under?', ru: 'На чье имя бронь?' },
+        options: [
+          { text: '제 이름은 이반입니다.', correct: true },
+          { text: '방이 없어요.', correct: false },
+          { text: '모르겠어요.', correct: false },
+        ]
+      },
+      {
+        npc: '네, 확인되었습니다. 2박 3일 맞으신가요?',
+        npcTranslation: { en: 'Yes, confirmed. Is it for 3 days and 2 nights?', ru: 'Да, подтверждено. На 3 дня и 2 ночи?' },
+        options: [
+          { text: '네, 맞습니다.', correct: true },
+          { text: '아니요, 3박 4일입니다.', correct: true },
+          { text: '내일 갈게요.', correct: false },
+        ]
+      },
+      {
+        npc: '객실은 502호입니다. 조식은 1층에서 7시부터 가능합니다.',
+        npcTranslation: { en: 'Your room is 502. Breakfast is available on the 1st floor from 7 AM.', ru: 'Ваш номер 502. Завтрак на 1 этаже с 7 утра.' },
+        options: [
+          { text: '알겠습니다. 감사합니다.', correct: true },
+          { text: '조식 안 먹어요.', correct: true },
+          { text: '지금 몇 시예요?', correct: false },
+        ]
+      }
+    ]
+  },
+  {
+    id: 'pharmacy_visit',
+    category: 'health',
+    title: { ko: '약국에서', en: 'At the Pharmacy', ru: 'В аптеке' },
+    icon: '💊',
+    steps: [
+      {
+        npc: '어떻게 오셨어요?',
+        npcTranslation: { en: 'How can I help you?', ru: 'Что вас беспокоит?' },
+        options: [
+          { text: '머리가 아파서요. 두통약 주세요.', correct: true },
+          { text: '배가 고파요.', correct: false },
+          { text: '약국이 어디예요?', correct: false },
+        ]
+      },
+      {
+        npc: '언제부터 아프셨나요?',
+        npcTranslation: { en: 'Since when have you been feeling sick?', ru: 'Как давно болит?' },
+        options: [
+          { text: '어제 저녁부터요.', correct: true },
+          { text: '내일부터요.', correct: false },
+          { text: '아침을 먹었어요.', correct: false },
+        ]
+      },
+      {
+        npc: '이 약을 식후 30분에 한 알씩 드세요.',
+        npcTranslation: { en: 'Take one pill 30 minutes after meals.', ru: 'Принимайте по одной таблетке через 30 минут после еды.' },
+        options: [
+          { text: '네, 알겠습니다. 얼마예요?', correct: true },
+          { text: '밥은 안 먹어요.', correct: false },
+          { text: '아니요, 싫어요.', correct: false },
+        ]
+      }
+    ]
+  },
+  {
+    id: 'bank_exchange',
+    category: 'bank',
+    title: { ko: '환전하기', en: 'Exchanging Money', ru: 'Обмен валюты' },
+    icon: '🏦',
+    steps: [
+      {
+        npc: '어떤 업무를 도와드릴까요?',
+        npcTranslation: { en: 'How can I assist you?', ru: 'Чем могу помочь?' },
+        options: [
+          { text: '환전을 하려고 하는데요.', correct: true },
+          { text: '돈을 잃어버렸어요.', correct: false },
+          { text: '집에 갈게요.', correct: false },
+        ]
+      },
+      {
+        npc: '어떤 통화로 환전하시겠어요?',
+        npcTranslation: { en: 'Which currency would you like to exchange to?', ru: 'На какую валюту хотите обменять?' },
+        options: [
+          { text: '달러를 한국 돈으로 바꿔주세요.', correct: true },
+          { text: '신용카드를 만들고 싶어요.', correct: false },
+          { text: '이거 환불해 주세요.', correct: false },
+        ]
+      },
+      {
+        npc: '여권을 보여주시겠습니까?',
+        npcTranslation: { en: 'May I see your passport?', ru: 'Покажите ваш паспорт?' },
+        options: [
+          { text: '여기 있습니다.', correct: true },
+          { text: '안 가져왔어요.', correct: false },
+          { text: '얼마예요?', correct: false },
+        ]
+      },
+      {
+        npc: '여기 환전된 금액과 영수증입니다. 확인해 보세요.',
+        npcTranslation: { en: 'Here is the exchanged money and receipt. Please check.', ru: 'Вот обменянные деньги и чек. Проверьте, пожалуйста.' },
+        options: [
+          { text: '네, 맞네요. 감사합니다.', correct: true },
+          { text: '돈이 부족해요.', correct: false },
+          { text: '어디로 가요?', correct: false },
+        ]
+      }
+    ]
+  },
+  {
+    id: 'phone_call',
+    category: 'daily',
+    title: { ko: '전화 통화', en: 'Phone Call', ru: 'Телефонный разговор' },
+    icon: '📱',
+    steps: [
+      {
+        npc: '여보세요?',
+        npcTranslation: { en: 'Hello? (on the phone)', ru: 'Алло?' },
+        options: [
+          { text: '여보세요, 지민 씨 계신가요?', correct: true },
+          { text: '안녕하세요, 주문할게요.', correct: false },
+          { text: '얼마예요?', correct: false },
+        ]
+      },
+      {
+        npc: '네, 전데요. 누구세요?',
+        npcTranslation: { en: 'Yes, speaking. Who is this?', ru: 'Да, это я. Кто это?' },
+        options: [
+          { text: '저 이반이에요. 잘 지내셨어요?', correct: true },
+          { text: '저기요, 길 좀 물을게요.', correct: false },
+          { text: '끊을게요.', correct: false },
+        ]
+      },
+      {
+        npc: '아, 이반 씨! 오랜만이에요. 무슨 일 있어요?',
+        npcTranslation: { en: 'Ah, Ivan! It\'s been a while. What\'s up?', ru: 'А, Иван! Давно не виделись. Что случилось?' },
+        options: [
+          { text: '내일 시간 괜찮아요? 같이 점심 먹을까요?', correct: true },
+          { text: '환불해 주세요.', correct: false },
+          { text: '안녕히 계세요.', correct: false },
+        ]
+      },
+      {
+        npc: '네, 좋아요. 12시에 만날까요?',
+        npcTranslation: { en: 'Yes, sounds good. Shall we meet at 12?', ru: 'Да, отлично. Встретимся в 12?' },
+        options: [
+          { text: '네, 12시에 봐요!', correct: true },
+          { text: '내일모레 봐요.', correct: false },
+          { text: '아니요, 싫어요.', correct: false },
+        ]
+      }
+    ]
   }
 ];

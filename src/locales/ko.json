@@ -24,6 +24,7 @@
     "feat_subtraction": "뺄셈", "feat_subtraction_desc": "빼기 연습",
     "feat_multiplication": "곱셈", "feat_multiplication_desc": "곱하기 구구단",
     "feat_division": "나눗셈", "feat_division_desc": "나누기 연습",
+    "feat_geometry": "기하학", "feat_geometry_desc": "도형 넓이와 둘레",
     "feat_word_problems": "문장제", "feat_word_problems_desc": "한국어 문장 연습",
     "feat_lessons": "수업", "feat_lessons_desc": "이론 학습하기",
     "feat_quiz": "퀴즈", "feat_quiz_desc": "실력 테스트",
@@ -81,7 +82,8 @@
     "op_subtraction": "뺄셈",
     "op_multiplication": "곱셈",
     "op_division": "나눗셈",
-    "op_word": "📝 문장제"
+    "op_word": "📝 문장제",
+    "op_geometry": "📐 기하학"
   },
   "vocabulary": {
     "title": "📖 단어장",
@@ -89,7 +91,9 @@
     "cat_all": "전체",
     "cat_numbers": "숫자",
     "cat_math": "수학 용어",
+    "cat_geometry": "기하학",
     "cat_phrases": "자주 쓰는 말",
+    "cat_travel": "상황",
     "cat_app": "앱 화면",
     "col_word": "단어",
     "col_pronunciation": "발음 (로마자)",
@@ -172,7 +176,9 @@
     "cat_all": "전체",
     "cat_numbers": "숫자",
     "cat_math": "수학",
+    "cat_geometry": "기하학",
     "cat_phrases": "표현",
+    "cat_travel": "상황",
     "cat_app": "앱",
     "session_correct": "{{n}}개 정답"
   },

@@ -75,10 +75,33 @@ export const vocabulary = [
   { id: 109, word: '쉬움',     pronunciation: 'swium',     ko: '쉽다 (Easy)',          en: 'easy',                 ru: 'легко',           category: 'app' },
   { id: 110, word: '보통',     pronunciation: 'botong',    ko: '중간 (Medium)',        en: 'medium / average',     ru: 'нормально', category: 'app' },
   { id: 111, word: '어려움',   pronunciation: 'eoryeoum',  ko: '어렵다 (Hard)',        en: 'hard / difficult',     ru: 'сложно',          category: 'app' },
-  { id: 112, word: '다크 모드',pronunciation: 'dakeu modeu', ko: '어두운 화면',        en: 'dark mode',            ru: 'темная тема',     category: 'app' }
+  { id: 112, word: '다크 모드',pronunciation: 'dakeu modeu', ko: '어두운 화면',        en: 'dark mode',            ru: 'темная тема',     category: 'app' },
+  // ── Диалоги 유용한 대화 단어 ─────────────────────────────
+  { id: 201, word: '주문',       pronunciation: 'jumun',       ko: '원하는 것을 시킴',       en: 'order',              ru: 'заказ',             category: 'travel' },
+  { id: 202, word: '포장',       pronunciation: 'pojang',      ko: '싸서 가져감',           en: 'takeout / packing',  ru: 'с собой / упаковка',category: 'travel' },
+  { id: 203, word: '현금',       pronunciation: 'hyeongeum',   ko: '지폐나 동전',           en: 'cash',               ru: 'наличные',          category: 'travel' },
+  { id: 204, word: '카드',       pronunciation: 'kadeu',       ko: '신용카드 등',           en: 'card',               ru: 'карта',             category: 'travel' },
+  { id: 205, word: '여권',       pronunciation: 'yeogwon',     ko: '여행 갈 때 필요한 신분증',en: 'passport',           ru: 'паспорт',           category: 'travel' },
+  { id: 206, word: '수하물',     pronunciation: 'suhamul',     ko: '여행 짐',              en: 'baggage / luggage',  ru: 'багаж',             category: 'travel' },
+  { id: 207, word: '탑승구',     pronunciation: 'tapseunggu',  ko: '비행기 타는 곳',         en: 'boarding gate',      ru: 'выход на посадку',  category: 'travel' },
+  { id: 208, word: '예약',       pronunciation: 'yeyak',       ko: '미리 약속함',           en: 'reservation',        ru: 'бронь',             category: 'travel' },
+  { id: 209, word: '환전',       pronunciation: 'hwanjeon',    ko: '다른 나라 돈으로 바꿈',  en: 'currency exchange',  ru: 'обмен валюты',      category: 'travel' },
+  { id: 210, word: '두통약',     pronunciation: 'dutongyang',  ko: '머리 아플 때 먹는 약',    en: 'headache pill',      ru: 'лекарство от головной боли', category: 'travel' },
+
+  // ── Геометрия 기하학 ───────────────────────────────────
+  { id: 301, word: '정사각형',   pronunciation: 'jeongsagakhyeong', ko: '네 변이 같은 사각형',  en: 'square',             ru: 'квадрат',           category: 'geometry' },
+  { id: 302, word: '직사각형',   pronunciation: 'jiksagakhyeong',   ko: '네 각이 직각인 사각형', en: 'rectangle',          ru: 'прямоугольник',     category: 'geometry' },
+  { id: 303, word: '삼각형',     pronunciation: 'samgakhyeong',     ko: '세 변으로 된 도형',    en: 'triangle',           ru: 'треугольник',       category: 'geometry' },
+  { id: 304, word: '원',         pronunciation: 'won',              ko: '둥근 도형',          en: 'circle',             ru: 'круг',              category: 'geometry' },
+  { id: 305, word: '둘레',       pronunciation: 'dulle',            ko: '가장자리 길이',       en: 'perimeter',          ru: 'периметр',          category: 'geometry' },
+  { id: 306, word: '넓이',       pronunciation: 'neolbi',           ko: '면적',              en: 'area',               ru: 'площадь',           category: 'geometry' },
+  { id: 307, word: '가로',       pronunciation: 'garo',             ko: '수평 방향',          en: 'width',              ru: 'ширина / по горизонтали', category: 'geometry' },
+  { id: 308, word: '세로',       pronunciation: 'sero',             ko: '수직 방향',          en: 'height / length',    ru: 'высота / по вертикали', category: 'geometry' },
+  { id: 309, word: '밑변',       pronunciation: 'mitbyeon',         ko: '도형의 아래쪽 변',     en: 'base',               ru: 'основание',         category: 'geometry' },
+  { id: 310, word: '높이',       pronunciation: 'nopi',             ko: '위아래 길이',        en: 'height',             ru: 'высота',            category: 'geometry' }
 ];
 
-export const categories = ['all', 'numbers', 'math', 'phrases', 'app'];
+export const categories = ['all', 'numbers', 'math', 'geometry', 'phrases', 'travel', 'app'];
 
 export const getByCategory = (cat) =>
   cat === 'all' ? vocabulary : vocabulary.filter(w => w.category === cat);

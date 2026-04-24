@@ -41,6 +41,17 @@ export const lessonsData = [
     }
   },
 
+  {
+    id: 'geometry_basics',
+    category: 'math_korean',
+    title: { ko: '기하학 기본', en: 'Geometry Basics', ru: 'Основы геометрии на корейском' },
+    content: {
+      ko: "기하학 용어의 구성 원리:\n\n'~각형(각의 모양)'을 사용하여 도형 이름을 만듭니다.\n• 삼 (3) + 각형 = [[삼각형|삼각형]] (Triangle)\n• 사 (4) + 각형 = [[사각형|사각형]] (Quadrangle)\n• 오 (5) + 각형 = [[오각형|오각형]] (Pentagon)\n\n'정(正)'이 붙으면 모든 변과 각이 같다는 뜻입니다.\n• [[정사각형|정사각형]] (Square)\n\n다른 용어:\n• 넓이 (Area) = [[넓이|넓이]]\n• 둘레 (Perimeter) = [[둘레|둘레]]\n• 원 (Circle) = [[원|원]]",
+      en: "How geometry terms are formed in Korean:\n\nShapes are usually named using the number of angles + '각형' (shape with angles).\n• 삼 (3) + 각형 = [[삼각형|삼각형]] (Triangle)\n• 사 (4) + 각형 = [[사각형|사각형]] (Rectangle/Quadrangle)\n• 오 (5) + 각형 = [[오각형|오각형]] (Pentagon)\n\nAdding '정' (jeong, 'regular/correct') means all sides and angles are equal.\n• [[정사각형|정사각형]] (Square)\n\nOther terms:\n• Area = [[넓이|넓이]]\n• Perimeter = [[둘레|둘레]]\n• Circle = [[원|원]]",
+      ru: "Принцип построения геометрических терминов:\n\nНазвания фигур строятся так: Число + 형 (форма, фигура).\nЕсли фигура многоугольная, добавляем 각 (угол).\n• 삼 (3) + 각형 = [[삼각형|삼각형]] (Треугольник)\n• 사 (4) + 각형 = [[사각형|사각형]] (Четырехугольник)\n• 오 (5) + 각형 = [[오각형|오각형]] (Пятиугольник)\n\nЕсли добавить спереди 원 (정 - правильный), получаются равносторонние фигуры.\n• [[정사각형|정사각형]] (Квадрат)\n• 시크사각형 (직 - прямой) = [[직사각형|직사각형]] (Прямоугольник)\n\nДругие термины:\n• Площадь = [[넓이|넓이]]\n• Периметр = [[둘레|둘레]]\n• Круг = [[원|원]]"
+    }
+  },
+
   // General Grammar
   {
     id: 'number_systems',

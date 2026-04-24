@@ -11,6 +11,7 @@ const Home = ({ onPageChange }) => {
     { icon: '➖', titleKey: 'feat_subtraction', descKey: 'feat_subtraction_desc', page: 'practice' },
     { icon: '✖️', titleKey: 'feat_multiplication', descKey: 'feat_multiplication_desc', page: 'practice' },
     { icon: '➗', titleKey: 'feat_division', descKey: 'feat_division_desc', page: 'practice' },
+    { icon: '📐', titleKey: 'feat_geometry', descKey: 'feat_geometry_desc', page: 'practice' },
     { icon: '📚', titleKey: 'feat_lessons', descKey: 'feat_lessons_desc', page: 'lessons' },
     { icon: '🎯', titleKey: 'feat_quiz', descKey: 'feat_quiz_desc', page: 'quiz' },
     { icon: '🃏', titleKey: 'feat_flashcards', descKey: 'feat_flashcards_desc', page: 'flashcards' },

@@ -16,7 +16,15 @@ const Flashcards = () => {
     return category === 'all' ? vocabulary : vocabulary.filter(w => w.category === category);
   }, [category]);
 
-  const dueCards = useMemo(() => getDueCards(filteredVocab), [filteredVocab]);
+  const dueCards = useMemo(() => {
+    const cards = getDueCards(filteredVocab);
+    // Fisher-Yates shuffle
+    for (let i = cards.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [cards[i], cards[j]] = [cards[j], cards[i]];
+    }
+    return cards;
+  }, [filteredVocab]);
   const srsStats = useMemo(() => getSrsStats(filteredVocab), [filteredVocab]);
 
   const currentWord = dueCards[currentIndex];
