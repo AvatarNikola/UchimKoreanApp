@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --color-primary: hsl(220, 90%, 56%);
+  --color-primary-dark: hsl(220, 90%, 45%);
+  --color-primary-light: hsl(220, 90%, 95%);
+  --color-secondary: hsl(262, 83%, 58%);
+  --color-success: hsl(142, 71%, 45%);
+  --color-danger: hsl(0, 84%, 60%);
+  --color-warning: hsl(38, 92%, 50%);
+  --color-bg: hsl(222, 47%, 6%);
+  --color-surface: hsl(222, 40%, 10%);
+  --color-surface2: hsl(222, 35%, 14%);
+  --color-border: hsl(222, 30%, 20%);
+  --color-text: hsl(220, 20%, 94%);
+  --color-text-muted: hsl(220, 15%, 60%);
+  --radius: 12px;
+  --radius-lg: 20px;
+  --shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+  --shadow-glow: 0 0 24px hsla(220, 90%, 56%, 0.25);
+  --transition: 0.2s ease;
+  --font-main: 'Inter', 'Noto Sans KR', sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-main);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.App-main {
+  flex: 1;
+  padding: 2rem 1rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--color-surface); }
+::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-text-muted); }
+
+/* ── Global Buttons ── */
+button {
+  cursor: pointer;
+  font-family: var(--font-main);
+  font-size: 0.95rem;
+  font-weight: 500;
+  border: none;
+  border-radius: var(--radius);
+  transition: all var(--transition);
+}
+
+button:active { transform: scale(0.97); }
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  color: #fff;
+  padding: 0.75rem 1.75rem;
+  box-shadow: var(--shadow-glow);
+}
+
+.btn-primary:hover {
+  filter: brightness(1.15);
+  box-shadow: 0 0 32px hsla(220, 90%, 56%, 0.4);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--color-text-muted);
+  border: 1px solid var(--color-border);
+  padding: 0.65rem 1.4rem;
+}
+
+.btn-ghost:hover {
+  background: var(--color-surface2);
+  color: var(--color-text);
+  border-color: var(--color-text-muted);
+}
+
+/* ── Cards ── */
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+}
+
+/* ── Input ── */
+input[type="number"],
+input[type="text"],
+select {
+  background: var(--color-surface2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  color: var(--color-text);
+  font-family: var(--font-main);
+  font-size: 1rem;
+  padding: 0.75rem 1rem;
+  outline: none;
+  transition: border-color var(--transition), box-shadow var(--transition);
+  width: 100%;
+}
+
+input:focus, select:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px hsla(220, 90%, 56%, 0.15);
+}
+
+/* ── Badge ── */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.25rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.badge-blue  { background: hsla(220,90%,56%,0.15); color: var(--color-primary); }
+.badge-green { background: hsla(142,71%,45%,0.15); color: var(--color-success); }
+.badge-gold  { background: hsla(38,92%,50%,0.15);  color: var(--color-warning); }
+.badge-red   { background: hsla(0,84%,60%,0.15);   color: var(--color-danger); }

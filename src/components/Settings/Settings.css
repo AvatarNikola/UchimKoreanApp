@@ -1,0 +1,104 @@
+.settings {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.settings h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.settings-form {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.setting-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.setting-group > label:first-child {
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-muted);
+}
+
+.setting-group select {
+  max-width: 260px;
+}
+
+/* ── Language buttons ── */
+.lang-buttons {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.lang-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: var(--radius);
+  background: var(--color-surface2);
+  color: var(--color-text-muted);
+  border: 1px solid var(--color-border);
+  font-size: 0.92rem;
+  font-weight: 500;
+  transition: all var(--transition);
+}
+
+.lang-btn:hover {
+  background: var(--color-border);
+  color: var(--color-text);
+}
+
+.lang-btn--active {
+  background: hsla(220, 90%, 56%, 0.18);
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+  font-weight: 700;
+}
+
+/* ── Checkbox ── */
+.checkbox-label {
+  display: flex !important;
+  align-items: center;
+  gap: 0.65rem;
+  cursor: pointer;
+  font-size: 0.95rem;
+  color: var(--color-text) !important;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
+  font-weight: 400 !important;
+}
+
+.checkbox-label input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--color-primary);
+  cursor: pointer;
+}
+
+.save-button {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  color: #fff;
+  padding: 0.85rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-glow);
+  align-self: flex-start;
+}
+
+.save-button:hover { filter: brightness(1.12); }

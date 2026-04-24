@@ -1,0 +1,95 @@
+{
+  "app": { "title": "Korean Math" },
+  "nav": {
+    "home": "Home", "lessons": "Lessons", "practice": "Practice", "quiz": "Quiz",
+    "vocabulary": "Words", "flashcards": "Cards", "dialogue": "Talk", "audio": "Listen",
+    "stats": "Stats", "profile": "Profile", "settings": "Settings"
+  },
+  "home": {
+    "eyebrow": "Learn math in Korean",
+    "title": "Make math fun\nand learn Korean!",
+    "sub": "Solve math problems while naturally picking up Korean vocabulary.",
+    "start_practice": "Start Practice →", "start_quiz": "Take a Quiz 🎯",
+    "what_to_learn": "What will you learn?",
+    "feat_addition": "Addition", "feat_addition_desc": "Practice adding",
+    "feat_subtraction": "Subtraction", "feat_subtraction_desc": "Practice subtracting",
+    "feat_multiplication": "Multiplication", "feat_multiplication_desc": "Times tables",
+    "feat_division": "Division", "feat_division_desc": "Practice dividing",
+    "feat_lessons": "Lessons", "feat_lessons_desc": "Study theory",
+    "feat_quiz": "Quiz", "feat_quiz_desc": "Test yourself",
+    "feat_flashcards": "Flashcards", "feat_flashcards_desc": "Memorize words",
+    "feat_dialogue": "Dialogues", "feat_dialogue_desc": "Situational practice",
+    "feat_audio": "Listening", "feat_audio_desc": "Train your ear",
+    "info_topics": "Topics", "info_levels": "Levels", "info_problems": "Problems", "info_free": "Free"
+  },
+  "practice": {
+    "title": "✏️ Practice", "operation": "Operation", "difficulty": "Difficulty",
+    "option_listening": "🎧 Listening Mode (Hide Text)", "listening_placeholder": "🎧 (Hidden)",
+    "easy": "Easy", "medium": "Medium", "hard": "Hard",
+    "session": "Session", "correct_answers": "correct",
+    "placeholder": "Enter your answer", "submit": "Submit", "next": "Next →",
+    "answer_correct": "✅ Correct! (+10 pts)", "answer_wrong": "❌ Wrong. Answer: {{answer}}"
+  },
+  "quiz": {
+    "title": "🎯 Quiz", "setup": "Quiz Settings", "select_op": "Select operation", "difficulty": "Difficulty",
+    "total_info": "{{total}} questions · {{points}} pts per correct answer",
+    "start": "Start Quiz 🚀", "done_title": "🏁 Quiz Done!",
+    "accuracy": "Accuracy", "score": "Score", "streak_label": "Best streak",
+    "correct": "Correct", "wrong": "Wrong", "play_again": "Play Again 🔄", "change_settings": "Change Settings",
+    "feedback_correct": "✅ Correct! (+{{points}} pts)", "feedback_wrong": "❌ Wrong. Answer: {{answer}}",
+    "streak_msg": "🔥 {{count}} in a row!", "placeholder": "Enter your answer", "submit": "Submit",
+    "easy": "Easy", "medium": "Medium", "hard": "Hard",
+    "option_listening": "🎧 Listening Mode (Hide Text)", "listening_placeholder": "🎧 (Hidden)",
+    "op_addition": "Addition", "op_subtraction": "Subtraction", "op_multiplication": "Multiplication",
+    "op_division": "Division", "op_word": "📝 Word Problems"
+  },
+  "vocabulary": {
+    "title": "📖 Vocabulary", "search": "Search words...",
+    "cat_all": "All", "cat_numbers": "Numbers", "cat_math": "Math Terms", "cat_phrases": "Phrases", "cat_app": "App UI",
+    "col_word": "Word", "col_pronunciation": "Pronunciation", "col_meaning": "Meaning", "col_en": "English", "col_ru": "Russian",
+    "mode_cards": "Cards", "mode_list": "List", "flip_hint": "Click card to flip",
+    "prev": "← Prev", "next": "Next →", "of": "of", "front_hint": "Tap to see translation", "no_results": "No results found"
+  },
+  "lessons": {
+    "title": "📚 Lessons", "start": "Start Lesson",
+    "category_math_korean": "Math Korean", "category_general_grammar": "General Grammar", "category_situations": "Daily Situations",
+    "read_lesson": "Read Lesson", "back_to_lessons": "← Back to List"
+  },
+  "profile": {
+    "title": "👤 Profile", "level": "Level", "points": "Points", "total_solved": "Solved", "categories": "Categories",
+    "achievements_title": "Achievements", "no_achievements": "No achievements yet.",
+    "progress_title": "Progress by Category", "no_progress": "No progress yet."
+  },
+  "stats": {
+    "title": "📊 Stats", "level": "Level", "points": "Points", "total_solved": "Solved", "categories": "Categories",
+    "progress_title": "Progress by Category", "no_progress": "No progress yet."
+  },
+  "settings": {
+    "title": "⚙️ Settings", "language": "Language", "difficulty": "Default Difficulty",
+    "notifications": "Notifications", "dark_mode": "Dark Mode", "tts_speed": "TTS Speed",
+    "speed_slow": "Slow", "speed_normal": "Normal", "speed_fast": "Fast",
+    "save": "Save Settings", "saved": "Settings saved!", "easy": "Easy", "medium": "Medium", "hard": "Hard"
+  },
+  "streak": { "days": "day streak", "best": "Best", "daily_goal": "Today's goal", "goal_done": "Goal reached!" },
+  "flashcards": {
+    "title": "🃏 Flashcards", "tap_to_flip": "Tap to flip",
+    "again": "Again", "hard": "Hard", "good": "Good", "easy": "Easy",
+    "all_done": "All done!", "come_back": "Come back tomorrow to review.",
+    "mastered": "Mastered", "reviewing": "Reviewing", "learning": "Learning", "new": "New",
+    "cat_all": "All", "cat_numbers": "Numbers", "cat_math": "Math", "cat_phrases": "Phrases", "cat_app": "App",
+    "session_correct": "{{n}} correct"
+  },
+  "dialogue": {
+    "title": "💬 Dialogue Practice", "subtitle": "Practice Korean in real-life situations!",
+    "steps": "steps", "back": "Go back", "finished": "🎉 Dialogue complete!",
+    "result": "Result: {{score}} / {{total}} correct", "retry": "Try again", "other": "Choose another"
+  },
+  "audio": {
+    "title": "🎧 Listening Practice", "subtitle": "Listen and type what you hear!",
+    "mode": "Mode", "mode_numbers": "Numbers", "mode_phrases": "Phrases", "difficulty": "Difficulty",
+    "easy": "Easy (0–10)", "medium": "Medium (0–99)", "hard": "Hard (0–999)",
+    "start": "Start", "listen": "Tap to listen", "playing": "Playing...",
+    "placeholder_number": "Enter the number", "placeholder_phrase": "Type what you heard",
+    "submit": "Check", "correct": "Correct!", "wrong": "Wrong", "expected": "Answer", "next": "Next"
+  }
+}

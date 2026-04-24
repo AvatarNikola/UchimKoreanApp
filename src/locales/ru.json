@@ -1,0 +1,95 @@
+{
+  "app": { "title": "Корейская математика" },
+  "nav": {
+    "home": "Главная", "lessons": "Уроки", "practice": "Практика", "quiz": "Квиз",
+    "vocabulary": "Слова", "flashcards": "Карточки", "dialogue": "Диалоги", "audio": "На слух",
+    "stats": "Статистика", "profile": "Профиль", "settings": "Настройки"
+  },
+  "home": {
+    "eyebrow": "Математика на корейском",
+    "title": "Учите математику\nи корейский вместе!",
+    "sub": "Решайте математические задачи и попутно изучайте корейский язык.",
+    "start_practice": "Начать практику →", "start_quiz": "Пройти квиз 🎯",
+    "what_to_learn": "Что будем учить?",
+    "feat_addition": "Сложение", "feat_addition_desc": "Практика сложения",
+    "feat_subtraction": "Вычитание", "feat_subtraction_desc": "Практика вычитания",
+    "feat_multiplication": "Умножение", "feat_multiplication_desc": "Таблица умножения",
+    "feat_division": "Деление", "feat_division_desc": "Практика деления",
+    "feat_lessons": "Уроки", "feat_lessons_desc": "Изучение теории",
+    "feat_quiz": "Квиз", "feat_quiz_desc": "Проверка знаний",
+    "feat_flashcards": "Карточки", "feat_flashcards_desc": "Запоминание слов",
+    "feat_dialogue": "Диалоги", "feat_dialogue_desc": "Практика ситуаций",
+    "feat_audio": "На слух", "feat_audio_desc": "Тренировка слуха",
+    "info_topics": "Тем", "info_levels": "Уровней", "info_problems": "Задач", "info_free": "Бесплатно"
+  },
+  "practice": {
+    "title": "✏️ Практика", "operation": "Действие", "difficulty": "Сложность",
+    "option_listening": "🎧 Только на слух (скрыть текст)", "listening_placeholder": "🎧 (Пример скрыт)",
+    "easy": "Легко", "medium": "Средне", "hard": "Сложно",
+    "session": "Сессия", "correct_answers": "правильно",
+    "placeholder": "Введите ответ", "submit": "Ответить", "next": "Следующий →",
+    "answer_correct": "✅ Правильно! (+10 очков)", "answer_wrong": "❌ Ошибка. Ответ: {{answer}}"
+  },
+  "quiz": {
+    "title": "🎯 Квиз", "setup": "Настройки квиза", "select_op": "Выберите действие", "difficulty": "Сложность",
+    "total_info": "{{total}} вопросов · {{points}} очков за правильный ответ",
+    "start": "Начать квиз 🚀", "done_title": "🏁 Квиз завершён!",
+    "accuracy": "Точность", "score": "Очки", "streak_label": "Лучшая серия",
+    "correct": "Правильно", "wrong": "Ошибок", "play_again": "Ещё раз 🔄", "change_settings": "Изменить настройки",
+    "feedback_correct": "✅ Правильно! (+{{points}} очков)", "feedback_wrong": "❌ Ошибка. Ответ: {{answer}}",
+    "streak_msg": "🔥 {{count}} подряд!", "placeholder": "Введите ответ", "submit": "Ответить",
+    "easy": "Легко", "medium": "Средне", "hard": "Сложно",
+    "option_listening": "🎧 Только на слух (скрыть текст)", "listening_placeholder": "🎧 (Пример скрыт)",
+    "op_addition": "Сложение", "op_subtraction": "Вычитание", "op_multiplication": "Умножение",
+    "op_division": "Деление", "op_word": "📝 Задачки"
+  },
+  "vocabulary": {
+    "title": "📖 Словарь", "search": "Найти слово...",
+    "cat_all": "Все", "cat_numbers": "Числа", "cat_math": "Математика", "cat_phrases": "Фразы", "cat_app": "Интерфейс",
+    "col_word": "Слово", "col_pronunciation": "Произношение", "col_meaning": "Значение", "col_en": "English", "col_ru": "Русский",
+    "mode_cards": "Карточки", "mode_list": "Список", "flip_hint": "Нажмите на карточку",
+    "prev": "← Назад", "next": "Вперёд →", "of": "из", "front_hint": "Нажмите для перевода", "no_results": "Ничего не найдено"
+  },
+  "lessons": {
+    "title": "📚 Уроки", "start": "Начать урок",
+    "category_math_korean": "Математический Корейский", "category_general_grammar": "Основы грамматики",
+    "category_situations": "Ситуации и фразы", "read_lesson": "Читать урок", "back_to_lessons": "← Назад к списку"
+  },
+  "profile": {
+    "title": "👤 Профиль", "level": "Уровень", "points": "Очки", "total_solved": "Решено", "categories": "Категорий",
+    "achievements_title": "Достижения", "no_achievements": "Пока нет достижений.",
+    "progress_title": "Прогресс по категориям", "no_progress": "Прогресс пока отсутствует."
+  },
+  "stats": {
+    "title": "📊 Статистика", "level": "Уровень", "points": "Очки", "total_solved": "Решено", "categories": "Категорий",
+    "progress_title": "Прогресс по категориям", "no_progress": "Прогресс пока отсутствует."
+  },
+  "settings": {
+    "title": "⚙️ Настройки", "language": "Язык", "difficulty": "Сложность по умолчанию",
+    "notifications": "Уведомления", "dark_mode": "Тёмная тема", "tts_speed": "Скорость диктора",
+    "speed_slow": "Медленно", "speed_normal": "Обычно", "speed_fast": "Быстро",
+    "save": "Сохранить", "saved": "Настройки сохранены!", "easy": "Легко", "medium": "Средне", "hard": "Сложно"
+  },
+  "streak": { "days": "дней подряд", "best": "Рекорд", "daily_goal": "Цель на сегодня", "goal_done": "Цель достигнута!" },
+  "flashcards": {
+    "title": "🃏 Карточки", "tap_to_flip": "Нажмите для переворота",
+    "again": "Заново", "hard": "Сложно", "good": "Хорошо", "easy": "Легко",
+    "all_done": "Всё повторено!", "come_back": "Возвращайтесь завтра для повторения.",
+    "mastered": "Выучено", "reviewing": "Повторение", "learning": "Учу", "new": "Новые",
+    "cat_all": "Все", "cat_numbers": "Числа", "cat_math": "Математика", "cat_phrases": "Фразы", "cat_app": "Приложение",
+    "session_correct": "{{n}} правильно"
+  },
+  "dialogue": {
+    "title": "💬 Диалоги", "subtitle": "Практикуйте корейский в реальных ситуациях!",
+    "steps": "шагов", "back": "Назад", "finished": "🎉 Диалог завершён!",
+    "result": "Результат: {{score}} / {{total}} правильно", "retry": "Ещё раз", "other": "Выбрать другой"
+  },
+  "audio": {
+    "title": "🎧 Тренировка на слух", "subtitle": "Слушайте и вводите то, что услышали!",
+    "mode": "Режим", "mode_numbers": "Числа", "mode_phrases": "Фразы", "difficulty": "Сложность",
+    "easy": "Легко (0–10)", "medium": "Средне (0–99)", "hard": "Сложно (0–999)",
+    "start": "Начать", "listen": "Нажмите чтобы послушать", "playing": "Воспроизведение...",
+    "placeholder_number": "Введите число", "placeholder_phrase": "Введите услышанное",
+    "submit": "Проверить", "correct": "Правильно!", "wrong": "Неверно", "expected": "Ответ", "next": "Далее"
+  }
+}

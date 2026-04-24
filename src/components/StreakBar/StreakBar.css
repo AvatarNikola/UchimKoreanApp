@@ -1,0 +1,157 @@
+.streak-bar {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 1.2rem 1.5rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ── Streak Info ── */
+.streak-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.streak-fire {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.streak-emoji {
+  font-size: 2rem;
+  animation: fireWiggle 2s ease infinite;
+}
+
+@keyframes fireWiggle {
+  0%, 100% { transform: rotate(0deg) scale(1); }
+  25% { transform: rotate(-5deg) scale(1.1); }
+  75% { transform: rotate(5deg) scale(1.05); }
+}
+
+.streak-numbers {
+  display: flex;
+  flex-direction: column;
+}
+
+.streak-count {
+  font-size: 1.8rem;
+  font-weight: 800;
+  line-height: 1;
+  background: linear-gradient(135deg, #FF6B35, #F7931E);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.streak-label {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.streak-best {
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+  background: var(--color-surface2);
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+}
+
+/* ── Daily Goal ── */
+.daily-goal {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.daily-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.daily-title {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+
+.daily-count {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.daily-bar-bg {
+  height: 8px;
+  background: var(--color-surface2);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.daily-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+  border-radius: 4px;
+  transition: width 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  min-width: 0;
+}
+
+.daily-bar-complete {
+  background: linear-gradient(90deg, var(--color-success), hsl(162, 71%, 45%));
+  box-shadow: 0 0 12px hsla(142, 71%, 45%, 0.4);
+}
+
+.daily-done-badge {
+  font-size: 0.78rem;
+  color: var(--color-success);
+  font-weight: 600;
+  text-align: center;
+  animation: fadeInUp 0.3s ease;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Confetti ── */
+.confetti-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 10;
+  overflow: hidden;
+}
+
+.confetti-piece {
+  position: absolute;
+  top: -10px;
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  animation: confettiFall 2.5s ease forwards;
+}
+
+@keyframes confettiFall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(120px) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .streak-bar { padding: 1rem; }
+  .streak-count { font-size: 1.5rem; }
+  .streak-emoji { font-size: 1.6rem; }
+}

@@ -1,0 +1,103 @@
+.profile {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.profile h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.profile-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.stat-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.stat-card h3 {
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.stat-card p {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--color-primary);
+  margin: 0;
+}
+
+/* ── Achievements ── */
+.profile-achievements {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.profile-achievements h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.achievements-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 0.6rem;
+}
+
+.achievement-item {
+  background: hsla(38, 92%, 50%, 0.1);
+  border: 1px solid hsla(38, 92%, 50%, 0.2);
+  border-radius: var(--radius);
+  padding: 0.65rem 1rem;
+  font-size: 0.9rem;
+  color: var(--color-warning);
+  font-weight: 500;
+}
+
+/* ── Category progress ── */
+.profile-progress {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+}
+
+.profile-progress h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.category-progress {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.65rem 0;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+
+.category-progress:last-child { border-bottom: none; }
+
+.no-progress {
+  color: var(--color-text-muted);
+  text-align: center;
+  padding: 1.5rem;
+}

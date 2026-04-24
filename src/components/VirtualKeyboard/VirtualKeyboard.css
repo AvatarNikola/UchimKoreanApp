@@ -1,0 +1,60 @@
+.vkb-container {
+  background: var(--color-surface2);
+  border: 1px solid var(--color-border);
+  padding: 0.8rem;
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  user-select: none;
+}
+
+.vkb-row {
+  display: flex;
+  justify-content: center;
+  gap: 0.4rem;
+}
+
+.vkb-row.row-1 {
+  padding: 0 1rem;
+}
+.vkb-row.row-2 {
+  padding: 0 2rem;
+}
+
+.vkb-key {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  color: var(--color-text);
+  font-size: 1.2rem;
+  font-weight: 700;
+  padding: 0.6rem 0.2rem;
+  min-width: 2.2rem;
+  flex: 1;
+  max-width: 3rem;
+  cursor: pointer;
+  box-shadow: 0 2px 0 var(--color-border);
+  transition: all 0.1s ease;
+}
+
+.vkb-key:active {
+  transform: translateY(2px);
+  box-shadow: none;
+  background: var(--color-primary);
+  color: white;
+}
+
+.vkb-action {
+  background: hsla(0, 80%, 60%, 0.1);
+  color: hsla(0, 80%, 60%, 1);
+  border-color: hsla(0, 80%, 60%, 0.2);
+  min-width: 3rem;
+}
+
+.vkb-space {
+  max-width: unset;
+  flex: 1;
+  font-size: 1rem;
+}

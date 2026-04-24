@@ -1,0 +1,133 @@
+.practice {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.practice-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+/* Controls */
+.practice-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.ctrl-group {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.ctrl-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  min-width: 40px;
+}
+
+.ctrl-btns {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.ctrl-btn {
+  padding: 0.4rem 0.9rem;
+  border-radius: 8px;
+  background: var(--color-surface2);
+  color: var(--color-text-muted);
+  border: 1px solid var(--color-border);
+  font-size: 0.85rem;
+}
+
+.ctrl-btn:hover { background: var(--color-border); color: var(--color-text); }
+
+.ctrl-btn--active {
+  background: hsla(220, 90%, 56%, 0.18);
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.session-info {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+}
+
+.session-pct { color: var(--color-primary); font-weight: 600; }
+
+/* Problem card */
+.problem-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  transition: border-color 0.3s;
+}
+
+.problem-card--correct { border-color: var(--color-success); }
+.problem-card--wrong   { border-color: var(--color-danger);  }
+
+.problem-text {
+  font-size: 3rem;
+  font-weight: 800;
+  text-align: center;
+  color: var(--color-text);
+  padding: 1.5rem 0;
+  letter-spacing: 0.08em;
+}
+
+.practice-form {
+  width: 100%;
+  display: flex;
+  gap: 0.75rem;
+}
+
+.practice-input {
+  flex: 1;
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.practice-feedback {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: var(--radius);
+  animation: slideIn 0.2s ease;
+}
+
+.feedback--correct {
+  background: hsla(142, 71%, 45%, 0.1);
+  border: 1px solid hsla(142, 71%, 45%, 0.25);
+}
+
+.feedback--wrong {
+  background: hsla(0, 84%, 60%, 0.1);
+  border: 1px solid hsla(0, 84%, 60%, 0.25);
+}
+
+.feedback-text {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}

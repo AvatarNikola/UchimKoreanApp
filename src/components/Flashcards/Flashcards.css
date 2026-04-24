@@ -1,0 +1,269 @@
+.flashcards {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.flashcards-title {
+  font-size: 1.5rem;
+  margin-bottom: 1.2rem;
+}
+
+/* ── Категории ── */
+.fc-cats {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.fc-cat-btn {
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  background: var(--color-surface2);
+  color: var(--color-text-muted);
+  font-size: 0.82rem;
+  border: 1px solid var(--color-border);
+}
+
+.fc-cat-btn:hover {
+  background: var(--color-surface);
+  color: var(--color-text);
+}
+
+.fc-cat-active {
+  background: hsla(220, 90%, 56%, 0.15);
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+/* ── SRS Progress Bar ── */
+.srs-bar {
+  display: flex;
+  height: 6px;
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 0.8rem;
+  gap: 2px;
+}
+
+.srs-bar-segment {
+  min-width: 2px;
+  border-radius: 3px;
+  transition: flex 0.5s ease;
+}
+
+.srs-mastered { background: var(--color-success); }
+.srs-review   { background: var(--color-primary); }
+.srs-learning { background: var(--color-warning); }
+.srs-new      { background: var(--color-border); }
+
+/* ── Счётчик ── */
+.fc-counter {
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+  margin-bottom: 1.5rem;
+}
+
+/* ── Карточка 3D ── */
+.fc-card-wrapper {
+  perspective: 800px;
+  cursor: pointer;
+  margin-bottom: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.fc-card-wrapper.correct {
+  animation: flashCorrect 0.5s ease;
+}
+
+.fc-card-wrapper.wrong {
+  animation: flashWrong 0.5s ease;
+}
+
+@keyframes flashCorrect {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.03); box-shadow: 0 0 40px hsla(142, 71%, 45%, 0.4); }
+}
+
+@keyframes flashWrong {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-8px); }
+  40%, 80% { transform: translateX(8px); }
+}
+
+.fc-card {
+  position: relative;
+  height: 280px;
+  transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform-style: preserve-3d;
+}
+
+.fc-card--flipped {
+  transform: rotateY(180deg);
+}
+
+.fc-card-face {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  padding: 2rem;
+}
+
+.fc-card-front {
+  background: linear-gradient(135deg, var(--color-surface), var(--color-surface2));
+  box-shadow: var(--shadow);
+}
+
+.fc-card-back {
+  background: linear-gradient(135deg, hsl(222, 40%, 12%), hsl(222, 45%, 16%));
+  box-shadow: var(--shadow);
+  transform: rotateY(180deg);
+}
+
+.fc-word {
+  font-size: 2.8rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.fc-pronunciation {
+  font-size: 1rem;
+  color: var(--color-text-muted);
+}
+
+.fc-hint {
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+  opacity: 0.6;
+  margin-top: 1rem;
+}
+
+.fc-word-small {
+  font-size: 1.6rem;
+  color: var(--color-text-muted);
+}
+
+.fc-meaning {
+  font-size: 1.8rem;
+  font-weight: 600;
+  text-align: center;
+  color: var(--color-primary);
+}
+
+.fc-ko-meaning {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  text-align: center;
+}
+
+/* ── Кнопки оценки ── */
+.fc-rating {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+  animation: fadeInUp 0.3s ease;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fc-rate {
+  padding: 0.8rem 0.5rem;
+  border-radius: var(--radius);
+  font-size: 0.82rem;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  border: 1px solid var(--color-border);
+}
+
+.fc-rate-again {
+  background: hsla(0, 84%, 60%, 0.1);
+  color: var(--color-danger);
+}
+.fc-rate-again:hover { background: hsla(0, 84%, 60%, 0.2); }
+
+.fc-rate-hard {
+  background: hsla(38, 92%, 50%, 0.1);
+  color: var(--color-warning);
+}
+.fc-rate-hard:hover { background: hsla(38, 92%, 50%, 0.2); }
+
+.fc-rate-good {
+  background: hsla(220, 90%, 56%, 0.1);
+  color: var(--color-primary);
+}
+.fc-rate-good:hover { background: hsla(220, 90%, 56%, 0.2); }
+
+.fc-rate-easy {
+  background: hsla(142, 71%, 45%, 0.1);
+  color: var(--color-success);
+}
+.fc-rate-easy:hover { background: hsla(142, 71%, 45%, 0.2); }
+
+/* ── Пустое состояние ── */
+.flashcards-empty {
+  text-align: center;
+  padding: 3rem 2rem;
+}
+
+.empty-icon {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.flashcards-empty h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.flashcards-empty p {
+  color: var(--color-text-muted);
+  margin-bottom: 1.5rem;
+}
+
+.srs-stats-grid {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.srs-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.srs-num {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.srs-label {
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+}
+
+@media (max-width: 480px) {
+  .fc-card { height: 240px; }
+  .fc-word { font-size: 2.2rem; }
+  .fc-meaning { font-size: 1.4rem; }
+  .fc-rating { grid-template-columns: repeat(2, 1fr); }
+}
