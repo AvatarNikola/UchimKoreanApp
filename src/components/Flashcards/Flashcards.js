@@ -1,7 +1,7 @@
 import React, { useState, useMemo, useCallback } from 'react';
 import './Flashcards.css';
 import { useLanguage } from '../../contexts/LanguageContext';
-import { vocabulary } from '../../data/vocabulary';
+import { vocabulary, categories } from '../../data/vocabulary';
 import { getDueCards, reviewCard, getSrsStats } from '../../utils/srsUtils';
 
 const Flashcards = () => {
@@ -81,7 +81,7 @@ const Flashcards = () => {
 
       {/* Категории */}
       <div className="fc-cats">
-        {['all', 'numbers', 'math', 'phrases', 'app'].map(cat => (
+        {categories.map(cat => (
           <button
             key={cat}
             className={`fc-cat-btn${category === cat ? ' fc-cat-active' : ''}`}

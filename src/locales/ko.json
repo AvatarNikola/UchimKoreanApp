@@ -95,6 +95,8 @@
     "cat_phrases": "자주 쓰는 말",
     "cat_travel": "상황",
     "cat_app": "앱 화면",
+    "cat_food": "음식",
+    "cat_daily": "일상 생활",
     "col_word": "단어",
     "col_pronunciation": "발음 (로마자)",
     "col_meaning": "의미",
@@ -180,6 +182,8 @@
     "cat_phrases": "표현",
     "cat_travel": "상황",
     "cat_app": "앱",
+    "cat_food": "음식",
+    "cat_daily": "일상 생활",
     "session_correct": "{{n}}개 정답"
   },
   "dialogue": {

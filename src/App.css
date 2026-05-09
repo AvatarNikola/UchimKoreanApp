@@ -22,7 +22,9 @@
   --font-main: 'Inter', 'Noto Sans KR', sans-serif;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -53,10 +55,22 @@ body {
 }
 
 /* ── Scrollbar ── */
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: var(--color-surface); }
-::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: var(--color-text-muted); }
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-surface);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-muted);
+}
 
 /* ── Global Buttons ── */
 button {
@@ -64,12 +78,15 @@ button {
   font-family: var(--font-main);
   font-size: 0.95rem;
   font-weight: 500;
+  color: var(--color-text);
   border: none;
   border-radius: var(--radius);
   transition: all var(--transition);
 }
 
-button:active { transform: scale(0.97); }
+button:active {
+  transform: scale(0.97);
+}
 
 .btn-primary {
   background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
@@ -121,7 +138,8 @@ select {
   width: 100%;
 }
 
-input:focus, select:focus {
+input:focus,
+select:focus {
   border-color: var(--color-primary);
   box-shadow: 0 0 0 3px hsla(220, 90%, 56%, 0.15);
 }
@@ -137,7 +155,22 @@ input:focus, select:focus {
   font-weight: 600;
 }
 
-.badge-blue  { background: hsla(220,90%,56%,0.15); color: var(--color-primary); }
-.badge-green { background: hsla(142,71%,45%,0.15); color: var(--color-success); }
-.badge-gold  { background: hsla(38,92%,50%,0.15);  color: var(--color-warning); }
-.badge-red   { background: hsla(0,84%,60%,0.15);   color: var(--color-danger); }
+.badge-blue {
+  background: hsla(220, 90%, 56%, 0.15);
+  color: var(--color-primary);
+}
+
+.badge-green {
+  background: hsla(142, 71%, 45%, 0.15);
+  color: var(--color-success);
+}
+
+.badge-gold {
+  background: hsla(38, 92%, 50%, 0.15);
+  color: var(--color-warning);
+}
+
+.badge-red {
+  background: hsla(0, 84%, 60%, 0.15);
+  color: var(--color-danger);
+}

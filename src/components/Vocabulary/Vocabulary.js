@@ -1,9 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import './Vocabulary.css';
 import { useLanguage } from '../../contexts/LanguageContext';
-import { vocabulary, getByCategory } from '../../data/vocabulary';
-
-const CATEGORIES = ['all', 'numbers', 'math', 'phrases', 'app'];
+import { vocabulary, getByCategory, categories } from '../../data/vocabulary';
 
 const Vocabulary = () => {
   const { t, lang } = useLanguage();
@@ -61,8 +59,6 @@ const Vocabulary = () => {
   const handleNext = () => { setCardIndex(i => Math.min(filtered.length - 1, i + 1)); setFlipped(false); };
   const handleFlip = () => setFlipped(f => !f);
 
-  const catLabelKey = { all: 'cat_all', numbers: 'cat_numbers', math: 'cat_math', phrases: 'cat_phrases', app: 'cat_app' };
-
   const playAudio = (e, text) => {
     e.stopPropagation();
     if (!('speechSynthesis' in window)) return;
@@ -84,14 +80,14 @@ const Vocabulary = () => {
       <div className="vocab-controls">
         {/* Category tabs */}
         <div className="vocab-cats">
-          {CATEGORIES.map(cat => (
+          {categories.map(cat => (
             <button
               key={cat}
               id={`vocab-cat-${cat}`}
               className={`cat-btn${category === cat ? ' cat-btn--active' : ''}`}
               onClick={() => handleCategoryChange(cat)}
             >
-              {t(`vocabulary.${catLabelKey[cat]}`)}
+              {t(`vocabulary.cat_${cat}`)}
             </button>
           ))}
         </div>

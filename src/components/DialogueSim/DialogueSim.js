@@ -1,8 +1,18 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useMemo } from 'react';
 import './DialogueSim.css';
 import { useLanguage } from '../../contexts/LanguageContext';
 import { dialoguesData } from '../../data/dialoguesData';
 import { updateUserProgress } from '../../utils/progressUtils';
+
+/* Fisher-Yates shuffle (returns new array) */
+const shuffle = (arr) => {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+};
 
 const DialogueSim = () => {
   const { t, lang } = useLanguage();
@@ -12,6 +22,9 @@ const DialogueSim = () => {
   const [score, setScore] = useState(0);
   const [isFinished, setIsFinished] = useState(false);
   const [answered, setAnswered] = useState(false);
+  const [visibleTranslations, setVisibleTranslations] = useState(new Set());
+  const [visibleOptTranslations, setVisibleOptTranslations] = useState(new Set());
+  const [shuffledOptions, setShuffledOptions] = useState([]);
   const chatRef = useRef(null);
 
   // Авто-скролл чата вниз
@@ -23,11 +36,17 @@ const DialogueSim = () => {
 
   const speakText = (text) => {
     if ('speechSynthesis' in window) {
+      window.speechSynthesis.cancel();
       const utterance = new SpeechSynthesisUtterance(text);
       utterance.lang = 'ko-KR';
       utterance.rate = 0.85;
       speechSynthesis.speak(utterance);
     }
+  };
+
+  const shuffleCurrentOptions = (step) => {
+    setShuffledOptions(shuffle(step.options));
+    setVisibleOptTranslations(new Set());
   };
 
   const startDialogue = (dialogue) => {
@@ -36,53 +55,72 @@ const DialogueSim = () => {
     setScore(0);
     setIsFinished(false);
     setAnswered(false);
+    setVisibleTranslations(new Set());
 
     const firstStep = dialogue.steps[0];
     setMessages([
-      { type: 'npc', text: firstStep.npc, translation: firstStep.npcTranslation }
+      { type: 'npc', text: firstStep.npc, translation: firstStep.npcTranslation, id: 0 }
     ]);
-
+    shuffleCurrentOptions(firstStep);
     speakText(firstStep.npc);
   };
 
-  const handleAnswer = (option, index) => {
+  const toggleTranslation = (msgId) => {
+    setVisibleTranslations(prev => {
+      const next = new Set(prev);
+      if (next.has(msgId)) next.delete(msgId);
+      else next.add(msgId);
+      return next;
+    });
+  };
+
+  const toggleOptTranslation = (optIdx) => {
+    setVisibleOptTranslations(prev => {
+      const next = new Set(prev);
+      if (next.has(optIdx)) next.delete(optIdx);
+      else next.add(optIdx);
+      return next;
+    });
+  };
+
+  const handleAnswer = (option) => {
     if (answered) return;
     setAnswered(true);
 
     const isCorrect = option.correct;
+    const msgId = messages.length;
 
-    // Добавить ответ пользователя
     setMessages(prev => [
       ...prev,
-      { type: 'user', text: option.text, correct: isCorrect }
+      { type: 'user', text: option.text, correct: isCorrect, translation: option.translation, id: msgId }
     ]);
 
     if (isCorrect) {
       setScore(prev => prev + 1);
     }
 
-    // Задержка перед следующим шагом
     setTimeout(() => {
       const nextIndex = stepIndex + 1;
 
       if (nextIndex < selectedDialogue.steps.length) {
         const nextStep = selectedDialogue.steps[nextIndex];
+        const nextMsgId = messages.length + 1;
         setMessages(prev => [
           ...prev,
-          { type: 'npc', text: nextStep.npc, translation: nextStep.npcTranslation }
+          { type: 'npc', text: nextStep.npc, translation: nextStep.npcTranslation, id: nextMsgId }
         ]);
         speakText(nextStep.npc);
         setStepIndex(nextIndex);
         setAnswered(false);
+        shuffleCurrentOptions(nextStep);
       } else {
-        // Диалог завершён
         const totalSteps = selectedDialogue.steps.length;
         const pts = Math.round((score + (isCorrect ? 1 : 0)) / totalSteps * 20);
         updateUserProgress(pts, 'dialogue');
 
         setMessages(prev => [
           ...prev,
-          { type: 'system', text: t('dialogue.finished') }
+          { type: 'system', text: t('dialogue.finished'), id: messages.length + 1 }
         ]);
         setIsFinished(true);
       }
@@ -140,18 +178,29 @@ const DialogueSim = () => {
 
       {/* Чат */}
       <div className="ds-chat" ref={chatRef}>
-        {messages.map((msg, i) => (
-          <div key={i} className={`ds-msg ds-msg--${msg.type} ${msg.correct === false ? 'ds-msg--wrong' : ''}`}>
+        {messages.map((msg) => (
+          <div key={msg.id} className={`ds-msg ds-msg--${msg.type} ${msg.correct === false ? 'ds-msg--wrong' : ''}`}>
             {msg.type === 'npc' && <span className="ds-avatar">🧑‍💼</span>}
             <div className="ds-bubble">
               <p className="ds-text">{msg.text}</p>
-              {msg.type === 'npc' && getTranslation(msg) && (
-                <p className="ds-translation">{getTranslation(msg)}</p>
+              {getTranslation(msg) && visibleTranslations.has(msg.id) && (
+                <p className="ds-translation ds-translation--visible">{getTranslation(msg)}</p>
               )}
               {msg.type === 'npc' && (
-                <button className="ds-speak" onClick={() => speakText(msg.text)} title="Listen">
-                  🔊
-                </button>
+                <div className="ds-bubble-actions">
+                  <button className="ds-action-btn" onClick={() => speakText(msg.text)} title="Listen">
+                    🔊
+                  </button>
+                  {getTranslation(msg) && (
+                    <button
+                      className={`ds-action-btn ${visibleTranslations.has(msg.id) ? 'ds-action-btn--active' : ''}`}
+                      onClick={() => toggleTranslation(msg.id)}
+                      title="Translate"
+                    >
+                      📖
+                    </button>
+                  )}
+                </div>
               )}
             </div>
             {msg.type === 'user' && (
@@ -166,16 +215,44 @@ const DialogueSim = () => {
       {/* Варианты ответа */}
       {!isFinished && currentStep && (
         <div className="ds-options">
-          {currentStep.options.map((opt, i) => (
-            <button
-              key={i}
-              className={`ds-option ${answered ? (opt.correct ? 'ds-opt-correct' : 'ds-opt-wrong') : ''}`}
-              onClick={() => handleAnswer(opt, i)}
-              disabled={answered}
-            >
-              {opt.text}
-            </button>
-          ))}
+          {shuffledOptions.map((opt, i) => {
+            const optTranslation = opt.translation
+              ? (lang === 'ru' ? opt.translation.ru : lang === 'en' ? opt.translation.en : null)
+              : null;
+
+            return (
+              <div key={i} className="ds-option-row">
+                <button
+                  className={`ds-option ${answered ? (opt.correct ? 'ds-opt-correct' : 'ds-opt-wrong') : ''}`}
+                  onClick={() => handleAnswer(opt)}
+                  disabled={answered}
+                >
+                  <span className="ds-option-text">{opt.text}</span>
+                  {visibleOptTranslations.has(i) && optTranslation && (
+                    <span className="ds-option-translation">{optTranslation}</span>
+                  )}
+                </button>
+                <div className="ds-option-actions">
+                  <button
+                    className="ds-action-btn ds-action-btn--sm"
+                    onClick={(e) => { e.stopPropagation(); speakText(opt.text); }}
+                    title="Listen"
+                  >
+                    🔊
+                  </button>
+                  {optTranslation && (
+                    <button
+                      className={`ds-action-btn ds-action-btn--sm ${visibleOptTranslations.has(i) ? 'ds-action-btn--active' : ''}`}
+                      onClick={(e) => { e.stopPropagation(); toggleOptTranslation(i); }}
+                      title="Translate"
+                    >
+                      📖
+                    </button>
+                  )}
+                </div>
+              </div>
+            );
+          })}
         </div>
       )}
 
