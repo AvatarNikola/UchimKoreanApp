@@ -275,5 +275,35 @@ export const lessonsData = [
       en: "Korean consonants change their sound depending on their position.\n\n**ㅅ (siot)**\n• Beginning of syllable: 's' = [[사|사]] (sa)\n• Before ㅣ (i): becomes 'sh' = [[시|시]] (shi)\n• Final position (받침): becomes 't' = [[옷|옷]] (ot, not os)\n\n**ㄱ (giyeok)**\n• Initial: 'g/k' = [[가|가]] (ga)\n• Final: unreleased 'k' = [[국|국]] (guk)\n\n**ㄷ (digeut)**\n• Initial: 'd/t' = [[다|다]] (da)\n• Final: unreleased 't' = [[곧|곧]] (got)\n\n**ㅂ (bieup)**\n• Initial: 'b/p' = [[바|바]] (ba)\n• Final: unreleased 'p' = [[밥|밥]] (bap)\n\n**Double consonants (쌍자음)**\nㄲ, ㄸ, ㅃ, ㅆ, ㅉ — pronounced with more tension/force.\n• [[까|까]] vs [[가|가]], [[빠|빠]] vs [[바|바]]\n\n**Linking Rule (연음)**\nWhen a final consonant is followed by ㅇ, it moves to the next syllable:\n[[한국어|한국어]] → han-gu-geo (not han-guk-eo)",
       ru: "Корейские согласные меняют звучание в зависимости от позиции в слоге.\n\n**ㅅ (сиот) — почему иногда «С», а иногда «Щ/Ш»?**\n• В начале слога: «с» = [[사|사]] (са)\n• Перед гласной ㅣ (и): «щ/ш» = [[시|시]] (щи) — это называется палатализация\n• В конце слога (받침): превращается в «т» = [[옷|옷]] (от, а не ос!)\n\n**ㄱ (киёк)**\n• В начале: «г/к» = [[가|가]] (га)\n• В конце слога: глухой «к» = [[국|국]] (кук)\n\n**ㄷ (тигыт)**\n• В начале: «д/т» = [[다|다]] (да)\n• В конце слога: глухой «т» = [[곧|곧]] (кот)\n\n**ㅂ (пиып)**\n• В начале: «б/п» = [[바|바]] (ба)\n• В конце слога: глухой «п» = [[밥|밥]] (пап)\n\n**Двойные согласные (쌍자음) — твёрдые звуки**\nㄲ, ㄸ, ㅃ, ㅆ, ㅉ — произносятся с напряжением и силой.\n• [[까|까]] (кка) vs [[가|가]] (ка)\n• [[빠|빠]] (ппа) vs [[바|바]] (ба)\n\n**Правило связывания (연음 ёнъум)**\nЕсли слог заканчивается на согласную, а следующий начинается с ㅇ, то согласная «перепрыгивает» в следующий слог:\n• [[한국어|한국어]] читается как «хан-гу-го» (а не хан-гук-о)\n• [[음악|음악]] → 으막 (ымак)"
     }
+  },
+  {
+    id: 'sov_structure',
+    category: 'general_grammar',
+    title: { ko: '문장 구조 (SOV)', en: 'Sentence Structure (SOV)', ru: 'Структура предложения (SOV)' },
+    content: {
+      ko: "한국어의 기본 문장 구조는 주어(Subject) + 목적어(Object) + 동사(Verb)입니다.\n\n• 저는(S) 사과를(O) 먹습니다(V).\n\n영어(SVO)나 러시아어(SVO)와 달리 동사가 항상 맨 끝에 옵니다. 한국어에서는 조사가 중요하기 때문에 주어나 목적어의 위치가 바뀌어도 의미는 통하지만, 동사는 항상 마지막입니다.",
+      en: "The basic sentence structure in Korean is Subject(S) + Object(O) + Verb(V).\n\n• 저는(S) 사과를(O) 먹습니다(V). (I apple eat)\n\nUnlike English (SVO), the verb MUST always come at the very end of the sentence. Because of particles, the order of other words can be flexible, but the verb remains at the end.",
+      ru: "Корейский язык использует структуру SOV (Подлежащее + Дополнение + Сказуемое).\n\n• 저는(S) 사과를(O) 먹습니다(V). (Я яблоко ем)\n\nВ отличие от русского языка, **глагол ВСЕГДА стоит в самом конце предложения**. Благодаря падежным окончаниям (은/는, 을/를), слова можно менять местами без потери смысла, но глагол сдвигать нельзя."
+    }
+  },
+  {
+    id: 'conjunctions',
+    category: 'general_grammar',
+    title: { ko: '접속사 (그리고, 그래서)', en: 'Conjunctions', ru: 'Союзы (И, Поэтому, Но)' },
+    content: {
+      ko: "문장과 문장을 연결하는 기본 접속사입니다:\n\n• 그리고 = [[그리고|그리고]] (And)\n• 그래서 = [[그래서|그래서]] (So / Therefore)\n• 하지만 / 그렇지만 = [[하지만|하지만]] (But)\n• 그러면 = [[그러면|그러면]] (Then / In that case)",
+      en: "Basic conjunctions used at the start of a sentence:\n\n• And = [[그리고|그리고]]\n• So / Therefore = [[그래서|그래서]]\n• But = [[하지만|하지만]] (hajiman)\n• Then / In that case = [[그러면|그러면]]",
+      ru: "Основные союзы, с которых начинаются предложения:\n\n• И (а также) = [[그리고|그리고]]\n• Поэтому = [[그래서|그래서]]\n• Но / Однако = [[하지만|하지만]]\n• В таком случае / Тогда = [[그러면|그러면]]"
+    }
+  },
+  {
+    id: 'descriptive_verbs',
+    category: 'general_grammar',
+    title: { ko: '형용사 (상태동사)', en: 'Descriptive Verbs (Adjectives)', ru: 'Прилагательные-глаголы' },
+    content: {
+      ko: "한국어에서 형용사는 동사처럼 행동합니다 (상태동사).\n\n예를 들어 '예쁘다(pretty)'는 'be pretty'를 의미합니다.\n• 꽃이 예쁩니다 = [[꽃이 예쁩니다|꽃이 예쁩니다]] (The flower is pretty)\n\n'이다(to be)'를 쓰지 않습니다. '꽃이 입니다 예쁘다'는 틀린 문장입니다.",
+      en: "In Korean, adjectives act like verbs. They are called 'descriptive verbs'.\n\nFor example, '예쁘다' doesn't just mean 'pretty', it means 'to be pretty'.\n• The flower is pretty = [[꽃이 예쁩니다|꽃이 예쁩니다]]\n\nYou do NOT use the verb '이다' (to be) with them. Saying '꽃이 입니다 예쁘다' is grammatically incorrect.",
+      ru: "В корейском языке **нет обычных прилагательных**. Вместо них используются 'Глаголы состояния'.\n\nСлово '예쁘다' означает не 'красивый', а 'быть красивым'.\n• Цветок красивый = [[꽃이 예쁩니다|꽃이 예쁩니다]]\n\nИз-за этого вам **не нужно** использовать глагол 이다 (быть). Сказать '꽃이 입니다 예쁘다' — это грубая ошибка."
+    }
   }
 ];

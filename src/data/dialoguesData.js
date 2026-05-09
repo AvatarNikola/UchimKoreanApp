@@ -13,9 +13,9 @@ export const dialoguesData = [
         npcTranslation: { en: 'Hello! Would you like to order?', ru: 'Здравствуйте! Будете заказывать?' },
         options: [
           { text: '아이스 아메리카노 주세요', correct: true, translation: { en: 'Iced Americano, please', ru: 'Айс американо, пожалуйста' } },
+          { text: '야, 아메리카노 하나 줘', correct: false, nextIndex: 4, translation: { en: 'Hey, give me an Americano', ru: 'Эй, дай мне американо' } },
           { text: '안녕히 가세요', correct: false, translation: { en: 'Goodbye', ru: 'До свидания' } },
           { text: '화장실이 어디예요?', correct: false, translation: { en: 'Where is the bathroom?', ru: 'Где туалет?' } },
-          { text: '배가 고파요', correct: false, translation: { en: 'I am hungry', ru: 'Я голоден' } },
         ]
       },
       {
@@ -43,10 +43,17 @@ export const dialoguesData = [
         npc: '4,500원입니다. 카드 되세요?',
         npcTranslation: { en: 'That\'s 4,500 won. Card okay?', ru: '4,500 вон. Картой подойдёт?' },
         options: [
-          { text: '네, 카드로 할게요', correct: true, translation: { en: 'Yes, I\'ll pay by card', ru: 'Да, картой' } },
-          { text: '현금으로 할게요', correct: true, translation: { en: 'I\'ll pay with cash', ru: 'Наличными' } },
-          { text: '너무 비싸요!', correct: false, translation: { en: 'Too expensive!', ru: 'Слишком дорого!' } },
-          { text: '영수증 주세요', correct: false, translation: { en: 'Receipt, please', ru: 'Чек, пожалуйста' } },
+          { text: '네, 카드로 할게요', correct: true, nextIndex: 'end', translation: { en: 'Yes, I\'ll pay by card', ru: 'Да, картой' } },
+          { text: '현금으로 할게요', correct: true, nextIndex: 'end', translation: { en: 'I\'ll pay with cash', ru: 'Наличными' } },
+          { text: '너무 비싸요!', correct: false, nextIndex: 'end', translation: { en: 'Too expensive!', ru: 'Слишком дорого!' } },
+        ]
+      },
+      {
+        npc: '손님, 처음 뵙는데 반말은 삼가주세요. 주문하시겠어요?',
+        npcTranslation: { en: 'Customer, please don\'t use informal language with someone you just met. Would you like to order?', ru: 'Уважаемый, пожалуйста, не говорите неформально с незнакомыми людьми. Будете заказывать?' },
+        options: [
+          { text: '죄송합니다. 아메리카노 주세요.', correct: true, nextIndex: 1, translation: { en: 'I am sorry. Americano, please.', ru: 'Извините. Американо, пожалуйста.' } },
+          { text: '뭐라고? 안 먹어!', correct: false, nextIndex: 'end', translation: { en: 'What did you say? I won\'t drink here!', ru: 'Что ты сказал? Не буду здесь пить!' } },
         ]
       }
     ]
@@ -62,9 +69,9 @@ export const dialoguesData = [
         npcTranslation: { en: 'Welcome! How many people?', ru: 'Добро пожаловать! Сколько вас?' },
         options: [
           { text: '두 명이에요', correct: true, translation: { en: 'Two people', ru: 'Нас двое' } },
+          { text: '야, 자리 있어?', correct: false, nextIndex: 5, translation: { en: 'Hey, got any seats?', ru: 'Эй, места есть?' } },
           { text: '안녕하세요', correct: false, translation: { en: 'Hello', ru: 'Здравствуйте' } },
           { text: '메뉴판 주세요', correct: false, translation: { en: 'Menu, please', ru: 'Дайте меню' } },
-          { text: '화장실 어디예요?', correct: false, translation: { en: 'Where is the bathroom?', ru: 'Где туалет?' } },
         ]
       },
       {
@@ -102,10 +109,17 @@ export const dialoguesData = [
         npc: '맛있게 드세요!',
         npcTranslation: { en: 'Enjoy your meal!', ru: 'Приятного аппетита!' },
         options: [
-          { text: '잘 먹겠습니다!', correct: true, translation: { en: 'I will eat well!', ru: 'Я буду есть с удовольствием!' } },
-          { text: '감사합니다', correct: true, translation: { en: 'Thank you', ru: 'Спасибо' } },
-          { text: '계산해 주세요', correct: false, translation: { en: 'Check, please', ru: 'Счёт, пожалуйста' } },
-          { text: '안녕히 가세요', correct: false, translation: { en: 'Goodbye', ru: 'До свидания' } },
+          { text: '잘 먹겠습니다!', correct: true, nextIndex: 'end', translation: { en: 'I will eat well!', ru: 'Я буду есть с удовольствием!' } },
+          { text: '감사합니다', correct: true, nextIndex: 'end', translation: { en: 'Thank you', ru: 'Спасибо' } },
+          { text: '안녕히 가세요', correct: false, nextIndex: 'end', translation: { en: 'Goodbye', ru: 'До свидания' } },
+        ]
+      },
+      {
+        npc: '손님, 반말은 기분이 나쁩니다. 예의를 지켜주세요.',
+        npcTranslation: { en: 'Customer, informal language is offensive. Please be polite.', ru: 'Уважаемый, неформальная речь оскорбительна. Будьте вежливы.' },
+        options: [
+          { text: '아... 죄송합니다. 두 명이에요.', correct: true, nextIndex: 1, translation: { en: 'Ah... I am sorry. Two people.', ru: 'А... Извините. Нас двое.' } },
+          { text: '내가 왜?', correct: false, nextIndex: 'end', translation: { en: 'Why should I?', ru: 'С какой стати?' } },
         ]
       }
     ]
@@ -132,19 +146,24 @@ export const dialoguesData = [
         npcTranslation: { en: 'Okay. There might be some traffic.', ru: 'Хорошо. Могут быть пробки.' },
         options: [
           { text: '괜찮아요', correct: true, translation: { en: 'It\'s okay', ru: 'Ничего страшного' } },
-          { text: '빨리 가주세요', correct: true, translation: { en: 'Please go fast', ru: 'Побыстрее, пожалуйста' } },
-          { text: '여기서 내려주세요', correct: false, translation: { en: 'Let me off here', ru: 'Высадите меня здесь' } },
-          { text: '다시 돌아가 주세요', correct: false, translation: { en: 'Please go back', ru: 'Вернитесь назад' } },
+          { text: '얼마나 걸릴까요?', correct: true, translation: { en: 'How long will it take?', ru: 'Сколько времени это займет?' } },
+          { text: '여기서 그냥 내려주세요', correct: false, nextIndex: 3, translation: { en: 'Just let me off here', ru: 'Просто высадите меня здесь' } },
         ]
       },
       {
         npc: '다 왔습니다! 8,500원이에요.',
         npcTranslation: { en: 'We\'re here! That\'s 8,500 won.', ru: 'Приехали! 8,500 вон.' },
         options: [
-          { text: '카드로 할게요', correct: true, translation: { en: 'I\'ll pay by card', ru: 'Картой' } },
-          { text: '감사합니다. 안녕히 계세요!', correct: true, translation: { en: 'Thank you. Goodbye!', ru: 'Спасибо. До свидания!' } },
-          { text: '다시 가주세요', correct: false, translation: { en: 'Go again, please', ru: 'Поедем обратно' } },
-          { text: '너무 비싸요', correct: false, translation: { en: 'Too expensive', ru: 'Слишком дорого' } },
+          { text: '카드로 할게요', correct: true, nextIndex: 'end', translation: { en: 'I\'ll pay by card', ru: 'Картой' } },
+          { text: '감사합니다. 안녕히 계세요!', correct: true, nextIndex: 'end', translation: { en: 'Thank you. Goodbye!', ru: 'Спасибо. До свидания!' } },
+        ]
+      },
+      {
+        npc: '네, 알겠습니다. 기본요금 4,800원입니다.',
+        npcTranslation: { en: 'Alright. The basic fare is 4,800 won.', ru: 'Хорошо. Базовый тариф 4,800 вон.' },
+        options: [
+          { text: '여기 현금이요.', correct: true, nextIndex: 'end', translation: { en: 'Here is cash.', ru: 'Вот наличные.' } },
+          { text: '너무 비싸요!', correct: false, nextIndex: 'end', translation: { en: 'Too expensive!', ru: 'Слишком дорого!' } },
         ]
       }
     ]

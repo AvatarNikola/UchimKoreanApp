@@ -3,6 +3,7 @@
   "nav": {
     "home": "Home", "lessons": "Lessons", "practice": "Practice", "quiz": "Quiz",
     "vocabulary": "Words", "flashcards": "Cards", "dialogue": "Talk", "audio": "Listen",
+    "sentence_builder": "Phrases", "typing_game": "Typing",
     "stats": "Stats", "profile": "Profile", "settings": "Settings"
   },
   "home": {

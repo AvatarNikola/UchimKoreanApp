@@ -3,6 +3,7 @@
   "nav": {
     "home": "Главная", "lessons": "Уроки", "practice": "Практика", "quiz": "Квиз",
     "vocabulary": "Слова", "flashcards": "Карточки", "dialogue": "Диалоги", "audio": "На слух",
+    "sentence_builder": "Фразы", "typing_game": "Печать",
     "stats": "Статистика", "profile": "Профиль", "settings": "Настройки"
   },
   "home": {

@@ -1,0 +1,136 @@
+.sentence-builder {
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.sb-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.sb-title {
+  margin: 0;
+  color: var(--color-text);
+  font-size: 2rem;
+}
+
+.sb-score {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ff9800;
+  background: rgba(255, 152, 0, 0.1);
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+}
+
+.sb-game-area {
+  padding: 2rem;
+}
+
+.sb-translation-container {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.sb-translation {
+  font-size: 1.5rem;
+  color: var(--color-primary);
+  margin: 0;
+  font-weight: 600;
+}
+
+.sb-drop-zone {
+  min-height: 80px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px dashed rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.sb-drop-zone--populated {
+  border-style: solid;
+  border-color: var(--color-primary);
+  background: rgba(var(--color-primary-rgb), 0.05);
+}
+
+.sb-word-pool {
+  min-height: 80px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.sb-word-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--color-text);
+  padding: 0.75rem 1.25rem;
+  border-radius: 8px;
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.sb-word-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.sb-word-btn:active {
+  transform: translateY(0);
+}
+
+.sb-controls {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.sb-feedback {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.1rem;
+  animation: fadeIn 0.3s ease;
+}
+
+.sb-feedback--correct {
+  background: rgba(76, 175, 80, 0.1);
+  color: #4caf50;
+  border: 1px solid rgba(76, 175, 80, 0.3);
+}
+
+.sb-feedback--wrong {
+  background: rgba(244, 67, 54, 0.1);
+  color: #f44336;
+  border: 1px solid rgba(244, 67, 54, 0.3);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 600px) {
+  .sentence-builder {
+    padding: 1rem;
+  }
+  .sb-word-btn {
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
+  }
+}

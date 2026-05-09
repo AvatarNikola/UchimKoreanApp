@@ -3,6 +3,7 @@ import './DialogueSim.css';
 import { useLanguage } from '../../contexts/LanguageContext';
 import { dialoguesData } from '../../data/dialoguesData';
 import { updateUserProgress } from '../../utils/progressUtils';
+import { startSpeechRecognition } from '../../utils/speechUtils';
 
 /* Fisher-Yates shuffle (returns new array) */
 const shuffle = (arr) => {
@@ -25,6 +26,9 @@ const DialogueSim = () => {
   const [visibleTranslations, setVisibleTranslations] = useState(new Set());
   const [visibleOptTranslations, setVisibleOptTranslations] = useState(new Set());
   const [shuffledOptions, setShuffledOptions] = useState([]);
+  const [isVoiceMode, setIsVoiceMode] = useState(false);
+  const [isListening, setIsListening] = useState(false);
+  const [voiceFeedback, setVoiceFeedback] = useState('');
   const chatRef = useRef(null);
 
   // Авто-скролл чата вниз
@@ -56,6 +60,7 @@ const DialogueSim = () => {
     setIsFinished(false);
     setAnswered(false);
     setVisibleTranslations(new Set());
+    setVoiceFeedback('');
 
     const firstStep = dialogue.steps[0];
     setMessages([
@@ -100,9 +105,12 @@ const DialogueSim = () => {
     }
 
     setTimeout(() => {
-      const nextIndex = stepIndex + 1;
+      let nextIndex = stepIndex + 1;
+      if (option.nextIndex !== undefined) {
+        nextIndex = option.nextIndex;
+      }
 
-      if (nextIndex < selectedDialogue.steps.length) {
+      if (nextIndex !== 'end' && nextIndex !== -1 && nextIndex < selectedDialogue.steps.length) {
         const nextStep = selectedDialogue.steps[nextIndex];
         const nextMsgId = messages.length + 1;
         setMessages(prev => [
@@ -112,6 +120,7 @@ const DialogueSim = () => {
         speakText(nextStep.npc);
         setStepIndex(nextIndex);
         setAnswered(false);
+        setVoiceFeedback('');
         shuffleCurrentOptions(nextStep);
       } else {
         const totalSteps = selectedDialogue.steps.length;
@@ -138,6 +147,40 @@ const DialogueSim = () => {
     if (lang === 'ru') return msg.translation.ru;
     if (lang === 'en') return msg.translation.en;
     return null;
+  };
+
+  const handleVoiceInput = () => {
+    if (isListening || answered) return;
+    setVoiceFeedback('');
+    setIsListening(true);
+
+    startSpeechRecognition('ko-KR', 
+      (spokenText) => {
+        setIsListening(false);
+        const normalize = (s) => s.replace(/[\s.,?!]/g, '').toLowerCase();
+        const spokenNorm = normalize(spokenText);
+
+        // Поиск совпадения среди текущих вариантов
+        let matchedOption = null;
+        for (const opt of shuffledOptions) {
+          if (normalize(opt.text) === spokenNorm) {
+            matchedOption = opt;
+            break;
+          }
+        }
+
+        if (matchedOption) {
+          handleAnswer(matchedOption);
+        } else {
+          setVoiceFeedback(`Я услышал: "${spokenText}". Не совпадает с вариантами. Попробуйте еще раз!`);
+        }
+      },
+      (err) => {
+        setIsListening(false);
+        setVoiceFeedback(`Ошибка: ${err}`);
+      },
+      () => setIsListening(false)
+    );
   };
 
   // Экран выбора диалога
@@ -173,7 +216,17 @@ const DialogueSim = () => {
           ← {t('dialogue.back')}
         </button>
         <h3>{selectedDialogue.icon} {getTitle(selectedDialogue)}</h3>
-        <span className="ds-score">⭐ {score}</span>
+        <div className="ds-header-right">
+          <label className="voice-toggle">
+            <input 
+              type="checkbox" 
+              checked={isVoiceMode} 
+              onChange={e => setIsVoiceMode(e.target.checked)} 
+            />
+            🎤 Голос
+          </label>
+          <span className="ds-score">⭐ {score}</span>
+        </div>
       </div>
 
       {/* Чат */}
@@ -253,6 +306,19 @@ const DialogueSim = () => {
               </div>
             );
           })}
+          
+          {isVoiceMode && (
+            <div className="ds-voice-container">
+              <button 
+                className={`btn-primary ds-mic-btn ${isListening ? 'listening' : ''}`}
+                onClick={handleVoiceInput}
+                disabled={answered}
+              >
+                {isListening ? '🔴 Говорите...' : '🎤 Нажмите и скажите ответ'}
+              </button>
+              {voiceFeedback && <p className="ds-voice-feedback">{voiceFeedback}</p>}
+            </div>
+          )}
         </div>
       )}
 

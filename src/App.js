@@ -13,6 +13,8 @@ import Vocabulary from './components/Vocabulary/Vocabulary';
 import Flashcards from './components/Flashcards/Flashcards';
 import DialogueSim from './components/DialogueSim/DialogueSim';
 import AudioTraining from './components/AudioTraining/AudioTraining';
+import SentenceBuilder from './components/SentenceBuilder/SentenceBuilder';
+import TypingGame from './components/TypingGame/TypingGame';
 import { getUserProgress } from './utils/progressUtils';
 
 function AppInner() {
@@ -33,6 +35,8 @@ function AppInner() {
       case 'flashcards': return <Flashcards />;
       case 'dialogue':   return <DialogueSim />;
       case 'audio':      return <AudioTraining />;
+      case 'sentence_builder': return <SentenceBuilder />;
+      case 'typing_game': return <TypingGame />;
       case 'profile':    return <Profile />;
       case 'stats':      return <Stats />;
       case 'settings':   return <Settings />;

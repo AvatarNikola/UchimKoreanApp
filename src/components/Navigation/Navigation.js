@@ -13,6 +13,8 @@ const Navigation = ({ currentPage, onPageChange }) => {
     { key: 'flashcards', icon: '🃏' },
     { key: 'dialogue',   icon: '💬' },
     { key: 'audio',      icon: '🎧' },
+    { key: 'sentence_builder', icon: '🧩' },
+    { key: 'typing_game', icon: '⌨️' },
     { key: 'vocabulary', icon: '📖' },
     { key: 'stats',      icon: '📊' },
     { key: 'profile',    icon: '👤' },
