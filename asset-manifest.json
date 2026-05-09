@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/UchimKoreanApp/static/css/main.7e0d3086.css",
-    "main.js": "/UchimKoreanApp/static/js/main.df7b0c16.js",
+    "main.css": "/UchimKoreanApp/static/css/main.032723a0.css",
+    "main.js": "/UchimKoreanApp/static/js/main.39f70d25.js",
     "index.html": "/UchimKoreanApp/index.html",
-    "main.7e0d3086.css.map": "/UchimKoreanApp/static/css/main.7e0d3086.css.map",
-    "main.df7b0c16.js.map": "/UchimKoreanApp/static/js/main.df7b0c16.js.map"
+    "main.032723a0.css.map": "/UchimKoreanApp/static/css/main.032723a0.css.map",
+    "main.39f70d25.js.map": "/UchimKoreanApp/static/js/main.39f70d25.js.map"
   },
   "entrypoints": [
-    "static/css/main.7e0d3086.css",
-    "static/js/main.df7b0c16.js"
+    "static/css/main.032723a0.css",
+    "static/js/main.39f70d25.js"
   ]
 }
